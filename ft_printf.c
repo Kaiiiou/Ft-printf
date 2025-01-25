@@ -12,15 +12,18 @@
 
 #include "ft_printf.h"
 
-int	printsigne(char signe, va_list ap)
+int	print_signe(char signe, va_list ap)
 {
 	int count;
 
 	count = 0;
 	if (signe == 'c')
-		count += printchar(va_arg(ap, int));
+		count += print_char(va_arg(ap, int));
 	else if (signe == 's')
-		count += printstr(va_arg(ap, char *));
+		count += print_str(va_arg(ap, char *));
+	else if (signe == 'd' || signe == 'i')
+		count += print_nbr(va_arg(ap, int));
+	
 }
 
 int ft_printf(const char *base, ...)
@@ -37,7 +40,7 @@ int ft_printf(const char *base, ...)
 	{
 		if(base[i] == '%')
 		{
-		count += printsigne(base[i+1], ap);
+		count += print_signe(base[i+1], ap);
 		i++;
 		}
 		else
@@ -49,4 +52,9 @@ int ft_printf(const char *base, ...)
 	}
 	va_end(ap);
 	return(count);
+}
+
+int main()
+{
+
 }
