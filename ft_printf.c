@@ -23,6 +23,10 @@ int	print_signe(char signe, va_list ap)
 		count += print_str(va_arg(ap, char *));
 	else if (signe == 'd' || signe == 'i')
 		count += print_nbr(va_arg(ap, int));
+	else if (signe == '%')
+		count += ft_printchar('%');
+	else if (signe == 'u')
+		count += print_unsigned(va_arg(ap, unsigned int));
 	
 }
 

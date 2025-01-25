@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_others.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
+/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 04:12:26 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/25 07:40:43 by amarti           ###   ########.fr       */
+/*   Updated: 2025/01/25 09:17:27 by kai-iou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,46 @@ int	print_str(char *str)
 	}
 	return (i);
 }
-void	print_nbr(int n)
+
+int	print_nbr(int n)
 {
 	int count;
 
 	count = 0;
-	
 	if (n == -2147483648)
 	{
-		print_str ("-2147483648");
+		return(print_str("-2147483648"));
 	}
 	else if (n < 0)
 	{
-		print_char ('-');
-		print_nbr (-n);
+		count += print_char ('-');
+		n = -n;
 	}
 	else if (n >= 10)
 	{
-		print_nbr (n / 10);
-		print_char((n % 10) + '0');
+		count += print_nbr(n / 10);
+		count += print_char((n % 10) + '0');
 	}
 	else
 	{
-		print_char (n + '0');
+		count += print_char(n + '0');
 	}
+	return (count);
+}
+
+int	print_unsigned(unsigned int n)
+{
+	int	count;
+
+	count = 0;
+	if (n >= 10)
+	{
+		count += print_unsigned(n / 10);
+		count += print_char((n % 10) + '0');
+	}
+	else
+	{
+		count += print_char(n + '0');
+	}
+	return (count);
 }
