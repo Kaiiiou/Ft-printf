@@ -1,23 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   others.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 03:08:07 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/25 01:36:31 by amarti           ###   ########.fr       */
+/*   Created: 2025/01/25 04:12:26 by amarti            #+#    #+#             */
+/*   Updated: 2025/01/25 04:18:06 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf.h"
 
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include <string.h>
-# include <stdio.h>
-
-
-#endif

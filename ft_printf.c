@@ -1,14 +1,52 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
+/* ,,,                                                       :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 04:34:31 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/24 04:36:22 by amarti           ###   ########.fr       */
+/*   Updated: 2025/01/25 00:58:02 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int	printsigne(char signe, va_list ap)
+{
+	int count;
+
+	count = 0;
+	if (signe == 'c')
+		count += printchar(va_arg(ap, int));
+	else if (signe == 's')
+		count += printstr(va_arg(ap, char *));
+}
+
+int ft_printf(const char *base, ...)
+{
+	int count;
+	int i;
+
+	i = 0;
+	count = 0;
+	va_list ap;
+	va_start(ap, base);
+
+	while(base[i])
+	{
+		if(base[i] == '%')
+		{
+		count += printsigne(base[i+1], ap);
+		i++;
+		}
+		else
+		{
+		write(1, base[i], 1);
+		count++;
+		i++;
+		}
+	}
+	va_end(ap);
+	return(count);
+}
