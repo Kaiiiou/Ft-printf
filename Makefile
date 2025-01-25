@@ -6,14 +6,15 @@
 #    By: amarti <amarti@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 04:15:04 by amarti            #+#    #+#              #
-#    Updated: 2025/01/24 04:31:53 by amarti           ###   ########.fr        #
+#    Updated: 2025/01/25 04:37:24 by amarti           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SOURCES = 	\
-
+SOURCES =		\
+	ft_print.c	\
+	others.c	\
 
 OBJECTS = $(SOURCES:.c=.o) 
 
