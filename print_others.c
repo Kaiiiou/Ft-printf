@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   print_others.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 04:12:26 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/25 09:17:27 by kai-iou          ###   ########.fr       */
+/*   Updated: 2025/01/26 09:33:00 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	print_str(char *str)
 	}
 	if (str[i])
 	{
-		write(1, str[i], 1);
+		write(1, &str[i], 1);
 		i++;
 	}
 	return (i);
