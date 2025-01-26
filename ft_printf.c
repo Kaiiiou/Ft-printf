@@ -23,11 +23,17 @@ int	print_signe(char signe, va_list ap)
 		count += print_str(va_arg(ap, char *));
 	else if (signe == 'd' || signe == 'i')
 		count += print_nbr(va_arg(ap, int));
-	else if (signe == '%')
-		count += ft_printchar('%');
 	else if (signe == 'u')
 		count += print_unsigned(va_arg(ap, unsigned int));
-	
+	else if (signe == 'x')
+		count += print_hexal(va_arg(ap, unsigned int));
+	else if (signe == 'X')
+		count += print_hexau(va_arg(ap, unsigned int));
+	else if (signe == 'p')
+		count += print_point(va_arg(ap, void *));
+	else
+		count += write(1, &signe, 1);
+	return(count);
 }
 
 int ft_printf(const char *base, ...)
@@ -56,9 +62,4 @@ int ft_printf(const char *base, ...)
 	}
 	va_end(ap);
 	return(count);
-}
-
-int main()
-{
-
 }

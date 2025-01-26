@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kai-iou <kai-iou@student.42.fr>            +#+  +:+       +#+        */
+/*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 03:08:07 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/25 09:17:27 by kai-iou          ###   ########.fr       */
+/*   Updated: 2025/01/26 06:32:08 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,9 @@ int	print_char(int c);
 int	print_str(char *str);
 int	print_nbr(int n);
 int	print_unsigned(unsigned int n);
+int	print_hexal(unsigned int n);
+int	print_hexau(unsigned int n);
+int	print_point(void *n);
+int	print_hexalptr(unsigned long n);
 
 #endif
