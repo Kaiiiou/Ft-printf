@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 04:34:31 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/26 09:46:10 by amarti           ###   ########.fr       */
+/*   Updated: 2025/01/27 01:59:44 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,29 +36,28 @@ int	print_signe(char signe, va_list ap)
 	return (count);
 }
 
-int ft_printf(const char *base, ...)
+int	ft_printf(const char *base, ...)
 {
-	int	count;
-	int	i;
+	va_list	ap;
+	int		count;
+	int		i;
 
 	i = 0;
 	count = 0;
-	va_list ap;
 	va_start (ap, base);
-
 	while (base[i])
 	{
-		if(base[i] == '%')
+		if (base[i] == '%')
 		{
 			i++;
-		count += print_signe(base[i], ap);
+			count += print_signe(base[i], ap);
 			i++;
 		}
 		else
 		{
-		write(1, &base[i], 1);
-		count++;
-		i++;
+			write(1, &base[i], 1);
+			count++;
+			i++;
 		}
 	}
 	va_end (ap);
@@ -67,5 +66,6 @@ int ft_printf(const char *base, ...)
 
 // int main(void)
 // {
-// 	ft_printf("%l");
+// 	ft_printf(" %s %s \n", " - ", "alois");
+// 	printf(" %s %s \n", " - ", "alois");
 // }

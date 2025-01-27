@@ -6,7 +6,7 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/25 04:12:26 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/26 09:33:00 by amarti           ###   ########.fr       */
+/*   Updated: 2025/01/27 02:21:13 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,17 +20,17 @@ int	print_char(int c)
 
 int	print_str(char *str)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (!str)
 	{
-		write(1, "(null)", 6);
+		write (1, "(null)", 6);
 		return (6);
 	}
-	if (str[i])
+	while (str[i])
 	{
-		write(1, &str[i], 1);
+		print_char(str[i]);
 		i++;
 	}
 	return (i);
@@ -38,19 +38,19 @@ int	print_str(char *str)
 
 int	print_nbr(int n)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	if (n == -2147483648)
 	{
-		return(print_str("-2147483648"));
+		return (print_str("-2147483648"));
 	}
 	else if (n < 0)
 	{
 		count += print_char ('-');
 		n = -n;
 	}
-	else if (n >= 10)
+	if (n >= 10)
 	{
 		count += print_nbr(n / 10);
 		count += print_char((n % 10) + '0');

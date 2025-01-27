@@ -6,12 +6,12 @@
 /*   By: amarti <amarti@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 03:08:07 by amarti            #+#    #+#             */
-/*   Updated: 2025/01/26 06:32:08 by amarti           ###   ########.fr       */
+/*   Updated: 2025/01/27 02:01:13 by amarti           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
